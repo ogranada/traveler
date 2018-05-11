@@ -1,0 +1,30 @@
+
+.Header {
+    padding: 5px;
+    height: 2em;
+    position: relative;
+    display: block;
+    top: 0;
+    
+    background-color: $contrast1;
+    color: white;
+    box-shadow: 0px 1px 3px $color1;
+    
+    &-navigation {
+        height: 100%;
+        margin-left: 0.5em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &-title {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        @include fontFamily($titleFontFamily, sans-serif);
+        letter-spacing: 2px;
+        font-size: 16px;
+    }
+
+}

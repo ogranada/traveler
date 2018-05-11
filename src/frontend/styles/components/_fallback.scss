@@ -1,0 +1,15 @@
+
+.Fallback {
+
+    &-aww {
+        font-size: 64px;
+        color: $contrast2;
+        @include fontFamily($titleFontFamily, sans-serif);
+    }
+
+    &-message {
+        color: $color1;
+        @include fontFamily($normalFontFamily, sans-serif);
+    }
+
+}

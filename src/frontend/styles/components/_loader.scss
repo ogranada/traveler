@@ -1,0 +1,130 @@
+
+// $trap-border: #20948b;
+// $trap-background: #6ab187;
+// $marker-color: #de7a22;
+
+$marker-color: $contrast2;
+
+$trap-border: $color1;
+$trap-background: $contrast1;
+
+$base-radius: 10px;
+$size: 4em;
+
+@keyframes bounce {
+  0% {
+    top: 10%;
+    transform: translateX(-50%) scaleX(1.5) scaleY(0.5);
+  }
+  30% {
+    transform: translateX(-50%) scaleX(1) scaleY(1);
+  }
+  100% {
+    top: -25%;
+    transform: translateX(-50%) scaleX(1) scaleY(1);
+  }
+}
+
+@keyframes bounce-shadow {
+  0% {
+    bottom: -2
+      px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: none;
+    height: 4px;
+    left: -0.5 * $size / 18;
+  }
+  100% {
+    bottom: -1 * $size / 3;
+    width: 20px;
+    height: 2px;
+    left: 0;
+    background-color: rgba(0,0,0,0.14);
+  }
+}
+
+.Loader {
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+body.animation-trigger {
+  width: 100%;
+  height: 120vh;
+
+  .Content {
+    display: none;
+  }
+
+  .Loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    
+   &-container {
+      position: relative;
+      font-size: 32px;
+      width: $size;
+      height: $size/2;
+      margin-bottom: $size;
+    }
+  
+    &-background {
+      position: absolute;
+      border: 2px solid $trap-border;
+      border-left: 1px;
+      border-top: 1px;
+      box-shadow: 3px 3px 5px black;
+      background-color: $trap-background;
+      width: $size/3*2;
+      height: $size/3*2;
+      border-radius: $base-radius;
+      transform: rotateX(60deg) rotateY(0) rotateZ(45deg);
+      left: $size / 6.5;
+      top: -0.5 * $size / 6;
+    }
+  
+    &-icon {
+      position: relative;
+      top: -200%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $marker-color;
+      text-shadow: 0 1px 1px black;
+      opacity: 0;
+      transition: top .5s ease-out;
+      &.shown {
+        top: 10%;
+        opacity: 1;
+      }
+      &.isAnimated {
+        animation: bounce 600ms alternate infinite ease;    
+      }
+      &.isAnimated::after {
+        animation: bounce-shadow 600ms alternate infinite ease;
+      }
+    }
+  
+    &-icon.shadow::after {
+      content: '';
+      font-size: 14px;
+      background-color: rgba(0,0,0, 0.4);
+      position: absolute;
+      width: $size/3;
+      height: 5px;
+      left: 0;
+      bottom: 0;
+      border-radius: 50%;
+      z-index: -1;
+      box-shadow: 0 0 15px black;
+    }
+  }
+
+  &.hiding .Loader {
+    opacity: 0;
+  }
+
+}

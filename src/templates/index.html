@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>traveler</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Source+Serif+Pro" rel="stylesheet">
+    <!--
+        <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Serif+Pro" rel="stylesheet">
+    -->
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+
+    <!-- -->
+    <div class="Loader">
+        <div class="Loader-container">
+            <div class="Loader-background"></div>
+            <i class="Loader-icon fa fa-map-marker"></i>
+        </div>
+    </div>
+    <!-- -->
+
+    <header class="Header">
+        <nav class="Header-navigation">
+            <h1 class="Header-title">
+                Traveler
+            </h1>
+        </nav>
+    </header>
+
+    <main class="Content">
+
+        <div class="Map"></div>
+        <section class="Controls">
+
+            <div class="Category">
+                <label class="Category-label" for="categories">
+                    Category
+                    <select class="Category-selector" name="categories" id="categories">
+                    </select>
+                </label>
+            </div>
+
+            <div class="Distance">
+                <label for="distance" class="Distance-label">
+                    Distance
+                    <div class="Distance-wrapper">
+                        <div class="Distance-labels">
+                            <span>0 Km</span>
+                            <span class="Distance-value"></span>
+                            <span>10 Km</span>
+                        </div>
+                        <input class="Distance-indicator" id="distance" name="distance" type="range" min="100" max="10000">
+                    </div>
+                </label>
+            </div>
+
+            <div class="SearchTrigger">
+                <button class="SearchTrigger-button">
+                    Search
+                </button>
+            </div>
+
+        </section>
+        
+
+    </main>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp2nPbkeJRhEGw8PKKupSAflo6RsFKDrk"></script>
+    <script src="/scripts/main.js"></script>
+</body>
+
+</html>

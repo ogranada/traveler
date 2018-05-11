@@ -1,0 +1,32 @@
+{
+  "name": "traveler",
+  "version": "1.0.0",
+  "description": "Simple application for traveler looking for food an great places",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/gulp",
+    "serve:dev": "./node_modules/.bin/forever.cmd -w --minUptime 1000 --spinSleepTime 1000 build/index.js",
+    "start": "./node_modules/.bin/gulp build-all; node build/index.js"
+  },
+  "repository": "https://github.com/ogranada/traveler",
+  "author": "Oscar Granada <oscar.andres.granada@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-minify": "^2.1.0",
+    "gulp-sass": "^4.0.1",
+    "node-sass": "^4.9.0",
+    "forever": "^0.15.3",
+    "gulp-better-rollup": "^3.1.0",
+    "rollup-plugin-babel": "^3.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
