@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Serif+Pro" rel="stylesheet">
     -->
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="minified/introjs.min.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
 
     <header class="Header">
         <nav class="Header-navigation">
-            <h1 class="Header-title">
+            <h1 class="Header-title" data-intro="You could find awesome places using this app">
                 Traveler
             </h1>
         </nav>
@@ -38,10 +39,12 @@
 
     <main class="Content">
 
-        <div class="Map"></div>
+        <div class="Map"
+             data-intro="All found places will appear here.<br>If you tap the indicator it will show you relevant information."
+             data-step="5"></div>
         <section class="Controls">
 
-            <div class="Category">
+            <div class="Category" data-intro="Choose a category of your interest">
                 <label class="Category-label" for="categories">
                     Category
                     <select class="Category-selector" name="categories" id="categories">
@@ -49,7 +52,7 @@
                 </label>
             </div>
 
-            <div class="Distance">
+            <div class="Distance" data-intro="Choose a search distance">
                 <label for="distance" class="Distance-label">
                     Distance
                     <div class="Distance-wrapper">
@@ -63,9 +66,9 @@
                 </label>
             </div>
 
-            <div class="SearchTrigger">
+            <div class="SearchTrigger" data-intro="And Press the search button">
                 <button class="SearchTrigger-button">
-                    Search
+                    Search awsome places
                 </button>
             </div>
 
@@ -76,6 +79,7 @@
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp2nPbkeJRhEGw8PKKupSAflo6RsFKDrk"></script>
+    <script src="minified/intro.min.js"></script>
     <script src="/scripts/main.js"></script>
 </body>
 
