@@ -142,5 +142,8 @@ ready(function () {
   loadCategories();
   initializeApplication();
   initializeEvents();
+  setTimeout(() => 
+    introJs().start()
+  , 1000)
 });
 
