@@ -85,6 +85,7 @@ async function initializeApplication() {
     stopAnimation();
     document.querySelector('.Distance-indicator').value = 1000;
     document.querySelector('.Distance-value').innerHTML = '- 1 Km -';
+    introJs().start();
   } catch (error) {
     window.console.log('Error: %s', error);
     loadFallbackGeolocation();
