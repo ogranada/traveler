@@ -4,4 +4,4 @@ build
 yarn-error.log
 .DS_Store
 src/backend/foursquare.json
-
+*.tar.gz

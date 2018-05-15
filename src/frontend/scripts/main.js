@@ -85,7 +85,6 @@ async function initializeApplication() {
     stopAnimation();
     document.querySelector('.Distance-indicator').value = 1000;
     document.querySelector('.Distance-value').innerHTML = '- 1 Km -';
-    introJs().start();
   } catch (error) {
     window.console.log('Error: %s', error);
     loadFallbackGeolocation();
@@ -124,6 +123,10 @@ async function startNewSearch() {
     .map(addPlaceToMap);
 }
 
+function launchHelpGuide() {
+  introJs().start();
+}
+
 /**
  * Create bindings between elements and actions.
  */
@@ -131,7 +134,8 @@ function initializeEvents() {
   document.querySelector('.Distance-indicator').addEventListener('input', (evt) => {
     document.querySelector('.Distance-value').innerHTML = `- ${evt.target.value / 1000} Km -`;
   });
-  document.querySelector('.SearchTrigger-button').addEventListener('click', startNewSearch)
+  document.querySelector('.SearchTrigger-button').addEventListener('click', startNewSearch);
+  document.querySelector('.Header-help').addEventListener('click', launchHelpGuide);
 }
 
 /**
@@ -142,8 +146,5 @@ ready(function () {
   loadCategories();
   initializeApplication();
   initializeEvents();
-  setTimeout(() => 
-    introJs().start()
-  , 1000)
 });
 
